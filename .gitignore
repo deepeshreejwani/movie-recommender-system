@@ -1,0 +1,92 @@
+
+# =========================================================
+# Python
+# =========================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================================================
+# IDE / OS
+# =========================================================
+
+.vscode/
+.idea/
+.DS_Store
+
+# =========================================================
+# Environment / secrets
+# =========================================================
+
+.env
+.env.*
+!.env.example
+
+# =========================================================
+# Raw / processed datasets
+# =========================================================
+
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+artifacts/processed/*
+!artifacts/processed/.gitkeep
+
+# =========================================================
+# Production model artifacts
+# =========================================================
+
+artifacts/models/*
+!artifacts/models/.gitkeep
+
+artifacts/embeddings/*
+!artifacts/embeddings/.gitkeep
+
+artifacts/serving/*
+!artifacts/serving/.gitkeep
+
+# =========================================================
+# Experiment output safety
+# =========================================================
+
+# Keep small JSON evaluation reports and release metadata eligible.
+# Exclude generated model weights, arrays, and datasets.
+
+artifacts/reproductions/**/*.pt
+artifacts/reproductions/**/*.pth
+artifacts/reproductions/**/*.safetensors
+artifacts/reproductions/**/*.bin
+artifacts/reproductions/**/*.npy
+artifacts/reproductions/**/*.npz
+artifacts/reproductions/**/*.parquet
+artifacts/reproductions/**/*.pkl
+artifacts/reproductions/**/*.pickle
+
+# =========================================================
+# Logs
+# =========================================================
+
+*.log
+logs/
+
+# =========================================================
+# Local archives
+# =========================================================
+
+*.zip
+*.tgz
+*.tar
+*.tar.gz

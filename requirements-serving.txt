@@ -1,0 +1,6 @@
+fastapi==0.141.1
+numpy==2.5.2
+polars==1.43.2
+pydantic==2.13.4
+tqdm==4.70.0
+uvicorn==0.52.4

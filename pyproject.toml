@@ -1,0 +1,103 @@
+
+[project]
+name = "movie-recommender-system"
+version = "0.1.0"
+description = "Production-style two-stage movie recommender system using Two-Tower retrieval and NeuMF ranking on MovieLens 32M"
+readme = "README.md"
+requires-python = ">=3.14"
+
+dependencies = [
+    "fastapi>=0.141.1",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "polars>=1.43.2",
+    "pyarrow>=25.0.1",
+    "pydantic>=2.13.4",
+    "scikit-learn>=1.9.0",
+    "scipy>=1.18.1",
+    "torch>=2.13.0",
+    "tqdm>=4.70.0",
+    "uvicorn>=0.52.4",
+]
+
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.4",
+]
+
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/recsys",
+    "app",
+]
+
+
+# =========================================================
+# Ruff
+# =========================================================
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+
+exclude = [
+    ".git",
+    ".venv",
+    ".pytest_cache",
+    ".ruff_cache",
+    "artifacts",
+    "data/**",
+]
+
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "SIM",
+    "RUF",
+    "TRY",
+]
+
+ignore = [
+    "TRY003",
+]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+
+# =========================================================
+# Pytest
+# =========================================================
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+addopts = [
+    "-ra",
+]
+
+filterwarnings = [
+    "default",
+]
